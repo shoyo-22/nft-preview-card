@@ -3,6 +3,10 @@
 :root {
   --soft-blue: hsl(215, 51%, 70%);
   --cyan: hsl(178, 100%, 50%);
+  --overlay-hue: 178;
+  --overlay-sat: 100%;
+  --overlay-light: 50%;
+  --overlay-alpha: 0.5;
   --very-dark-blue-main-bg: hsl(217, 54%, 11%);
   --very-dark-blue-card-bg: hsl(216, 50%, 16%);
   --very-dark-blue-line: hsl(215, 32%, 27%);
@@ -46,6 +50,7 @@ main {
 }
 
 .card__figure,
+.card__figure--hover,
 .card__image {
   border-radius: var(--bradius-img);
 }
@@ -57,11 +62,23 @@ main {
 .card__figure--hover {
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
   top: 0;
   display: grid;
   place-items: center;
-  background-color: rgba(var(--cyan), 0.5);
+  background-color: hsla(
+    var(--overlay-hue),
+    var(--overlay-sat),
+    var(--overlay-light),
+    var(--overlay-alpha)
+  );
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+
+.card__aside:hover .card__figure--hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .card__title {
