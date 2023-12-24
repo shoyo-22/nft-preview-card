@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
 :root {
   --soft-blue: hsl(215, 51%, 70%);
   --cyan: hsl(178, 100%, 50%);
@@ -16,5 +18,115 @@
 
   --fw-light: 300;
   --fw-regular: 400;
-  --fw-bold: 600;
+  --fw-semibold: 600;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  line-height: normal;
+  font-feature-settings: "clig" off, "liga" off;
+  color: var(--soft-blue);
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-lg);
+  background-color: var(--very-dark-blue-main-bg);
+}
+
+.card {
+  max-width: 350px;
+  padding: var(--spacing-lg);
+  border-radius: var(--bradius-card);
+  background-color: var(--very-dark-blue-card-bg);
+  box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card__figure,
+.card__image {
+  border-radius: var(--bradius-img);
+}
+
+.card__aside {
+  position: relative;
+}
+
+.card__figure--hover {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(var(--cyan), 0.5);
+}
+
+.card__title {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  color: var(--white);
+  font-size: 1.375rem;
+  font-weight: var(--fw-semibold);
+  transition: color 200ms ease-in-out;
+}
+
+.card__title:hover {
+  cursor: pointer;
+  color: var(--cyan);
+}
+
+.card__copy {
+  font-size: 1.125rem;
+}
+
+.card__metrics {
+  margin: var(--spacing-lg) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__metrics p {
+  display: inline-flex;
+  gap: var(--spacing-sm);
+}
+
+.card__metrics p:first-child {
+  color: var(--cyan);
+}
+
+.divider {
+  background-color: var(--very-dark-blue-line);
+  height: 1px;
+}
+
+.card__author {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.card__author img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--bradius-img);
+}
+
+.card__author h4 {
+  font-weight: var(--fw-regular);
+}
+
+.card__author h4 span {
+  color: var(--white);
+  transition: color 200ms ease-in-out;
+}
+
+.card__author h4 span:hover {
+  cursor: pointer;
+  color: var(--cyan);
 }
