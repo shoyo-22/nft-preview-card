@@ -147,3 +147,13 @@ main {
   cursor: pointer;
   color: var(--cyan);
 }
+
+@media (max-width: 25em) {
+  .card__title {
+    margin-bottom: calc(var(--spacing-sm) + 0.25rem);
+  }
+
+  .card__metrics {
+    margin: 1rem 0;
+  }
+}
